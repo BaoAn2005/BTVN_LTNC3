@@ -1,0 +1,8 @@
+int main() {
+    string a, b;
+    cin >> a >> b;
+    cout << a.size() << " " << b.size() << endl;
+    string c = a + b;
+    cout << c;
+    return 0;
+}
