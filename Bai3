@@ -1,0 +1,28 @@
+string timeConversion(string s) {
+int n = s.length();
+for (int i = 0; i< n; i++){
+    string timecurr = s.substr(8,2);
+    int time = stoi(s.substr(0,2));
+    
+    if (timecurr == "PM"&& time != 12){
+        time += 12;
+        string time1 = to_string(time);
+        s.replace(0,2,time1);  
+        s.erase(8,2);
+    }
+    else if (timecurr == "PM" && time == 12){
+        
+        s.erase(8,2);
+    }
+    else if (timecurr == "AM" && time == 12){
+        
+        string time1 = "00";
+        s.replace(0,2,time1);
+        s.erase(8,2);
+    }
+    else {
+        s.erase(8,2);
+    }
+}
+return s;
+}
